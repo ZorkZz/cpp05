@@ -70,6 +70,6 @@ int Bureaucrat::get_grade() const
 
 std::ostream	&operator << (std::ostream &os, const Bureaucrat &bureaucrat)
 {
-	os << "The Bureaucrate " << bureaucrat.get_name() << " is in grade: " << bureaucrat.get_grade() << std::endl;
+	os << bureaucrat.get_name() << ", bureacrat grade " << bureaucrat.get_grade() << std::endl;
 	return (os);
 }
