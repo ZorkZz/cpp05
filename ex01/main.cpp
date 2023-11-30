@@ -1,10 +1,14 @@
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 void	to_high(void)
 {
 	try
 	{
-		Bureaucrat bureau(0);
+		Bureaucrat	bureau(3);
+		Form		form("El formularo", -1, 10);
+		form.signe(bureau);
+		form.execute(bureau);
 		std::cout << bureau;
 	}
 	catch(std::exception &e)
@@ -13,11 +17,10 @@ void	to_high(void)
 	}
 	try
 	{
-		Bureaucrat bureau(1);
-		std::cout << bureau;
-		++bureau;
-		std::cout << bureau;
-		++bureau;
+		Bureaucrat	bureau(3);
+		Form		form("El formularo", 10, -1);
+		form.signe(bureau);
+		form.execute(bureau);
 		std::cout << bureau;
 	}
 	catch(std::exception &e)
@@ -30,7 +33,10 @@ void	to_low(void)
 {
 	try
 	{
-		Bureaucrat bureau(151);
+		Bureaucrat	bureau(3);
+		Form		form("El formularo", 151, 10);
+		form.signe(bureau);
+		form.execute(bureau);
 		std::cout << bureau;
 	}
 	catch(std::exception &e)
@@ -39,11 +45,10 @@ void	to_low(void)
 	}
 	try
 	{
-		Bureaucrat bureau(150);
-		std::cout << bureau;
-		--bureau;
-		std::cout << bureau;
-		--bureau;
+		Bureaucrat	bureau(3);
+		Form		form("El formularo", 10, 151);
+		form.signe(bureau);
+		form.execute(bureau);
 		std::cout << bureau;
 	}
 	catch(std::exception &e)
@@ -56,7 +61,10 @@ void	perfect(void)
 {
 	try
 	{
-		Bureaucrat bureau(50);
+		Bureaucrat	bureau(3);
+		Form		form("El formularo", 5, 10);
+		form.signe(bureau);
+		form.execute(bureau);
 		std::cout << bureau;
 	}
 	catch(std::exception &e)
@@ -65,12 +73,11 @@ void	perfect(void)
 	}
 	try
 	{
-		Bureaucrat bureau(10);
+		Bureaucrat	bureau(5);
+		Form		form("El formularo", 10, 5);
+		form.signe(bureau);
+		form.execute(bureau);
 		std::cout << bureau;
-		--bureau;
-		std::cout << bureau;
-		++bureau;
-		std::cout << ++bureau;
 	}
 	catch(std::exception &e)
 	{
