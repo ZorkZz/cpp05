@@ -3,7 +3,11 @@
 RobotomyRequestForm::~RobotomyRequestForm()
 {}
 
-RobotomyRequestForm::RobotomyRequestForm(): AForm("Robotomy Request Form", 72, 137)
+RobotomyRequestForm::RobotomyRequestForm(std::string target): AForm("Robotomy Request Form", 72, 45), _target(target)
+{
+}
+
+RobotomyRequestForm::RobotomyRequestForm(): AForm("Robotomy Request Form", 72, 45), _target("no one")
 {
 }
 
@@ -16,7 +20,10 @@ RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &form): AForm
 RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &form)
 {
 	if (this != &form)
+	{
 		this->_is_signed = form._is_signed;
+		this->_target = form._target;
+	}
 	return (*this);
 }
 
@@ -35,15 +42,17 @@ void RobotomyRequestForm::signeForm(Bureaucrat const &bureaucrat)
 
 void	RobotomyRequestForm::executeForm(Bureaucrat const &bureaucrat)
 {
-	if (bureaucrat.get_grade() > this->_grade_to_signe)
+	int	rand;
+
+	if (bureaucrat.get_grade() > this->_grade_to_exeute)
 		throw(GradeTooLowException());
 	else
 	{
 		srand(time(NULL));
-		int rand = std::rand();
-		if (rand % 2 != 0)
-			std::cout << bureaucrat << " is now robotomysed" << std::endl;
+		rand = std::rand();
+		if (rand % 2 == 0)
+			std::cout << this->_target << " is now robotomysed" << std::endl;
 		else
-			std::cout << bureaucrat << " is not robotomysed" << std::endl;
+			std::cout << this->_target << " is not robotomysed" << std::endl;
 	}
 }

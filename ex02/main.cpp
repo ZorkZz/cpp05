@@ -1,25 +1,119 @@
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
 #include "RobotomyRequestForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 
 void	robotomy(void)
 {
 	try
 	{
-		Bureaucrat arf("coock", 100);
+		Bureaucrat fry("fry", 40);
 		RobotomyRequestForm form;
 
-		form.signeForm(arf);
+		form.signeForm(fry);
+		form.executeForm(fry);
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << e.what();
+		std::cerr << e.what() << std::endl;
 	}
-	
+	try
+	{
+		Bureaucrat fry("fry", 45);
+		RobotomyRequestForm form("bender");
+
+		form.signeForm(fry);
+		form.executeForm(fry);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+	try
+	{
+		Bureaucrat fry("fry", 73);
+		RobotomyRequestForm form("bender");
+
+		form.signeForm(fry);
+		form.executeForm(fry);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+	try
+	{
+		Bureaucrat	fry0("fry0", 72);
+		Bureaucrat fry("fry", 45);
+		RobotomyRequestForm form("bender");
+
+		form.signeForm(fry0);
+		form.executeForm(fry);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+}
+
+void	tree()
+{
+	try
+	{
+		Bureaucrat fry("fry", 1);
+		ShrubberyCreationForm form("idk");
+
+		form.signeForm(fry);
+		form.executeForm(fry);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+	try
+	{
+		Bureaucrat fry("fry", 137);
+		ShrubberyCreationForm form("idk");
+
+		form.signeForm(fry);
+		form.executeForm(fry);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+
+	try
+	{
+		Bureaucrat fry("fry", 145);
+		ShrubberyCreationForm form("idk");
+
+		form.signeForm(fry);
+		form.executeForm(fry);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+
+	try
+	{
+		Bureaucrat fry("fry", 145);
+		Bureaucrat fry0("fry0", 137);
+		ShrubberyCreationForm form("idk");
+
+		form.signeForm(fry);
+		form.executeForm(fry0);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
 }
 
 int	main()
 {
-	robotomy();
+	//robotomy();
+	tree();
 	return (0);
 }
