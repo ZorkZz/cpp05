@@ -2,6 +2,7 @@
 #include "AForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 void	robotomy(void)
 {
@@ -111,9 +112,65 @@ void	tree()
 	}
 }
 
+void	presidential(void)
+{
+	try
+	{
+		Bureaucrat fry("fry", 1);
+		PresidentialPardonForm form("idk");
+
+		form.signeForm(fry);
+		form.executeForm(fry);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+	try
+	{
+		Bureaucrat fry("fry", 5);
+		PresidentialPardonForm form("idk");
+
+		form.signeForm(fry);
+		form.executeForm(fry);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+
+	try
+	{
+		Bureaucrat fry("fry", 25);
+		PresidentialPardonForm form("idk");
+
+		form.signeForm(fry);
+		form.executeForm(fry);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+
+	try
+	{
+		Bureaucrat fry("fry", 25);
+		Bureaucrat fry0("fry0", 5);
+		PresidentialPardonForm form("idk");
+
+		form.signeForm(fry);
+		form.executeForm(fry0);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+}
+
 int	main()
 {
-	//robotomy();
+	robotomy();
 	tree();
+	presidential();
 	return (0);
 }
