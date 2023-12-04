@@ -66,6 +66,7 @@ void	perfect(void)
 		form.signe(bureau);
 		form.execute(bureau);
 		std::cout << bureau;
+		std::cout << form;
 	}
 	catch(std::exception &e)
 	{
@@ -78,6 +79,7 @@ void	perfect(void)
 		form.signe(bureau);
 		form.execute(bureau);
 		std::cout << bureau;
+		std::cout << form;
 	}
 	catch(std::exception &e)
 	{

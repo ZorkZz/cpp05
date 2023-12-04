@@ -76,3 +76,14 @@ std::ostream	&operator << (std::ostream &os, const Form &form)
 	os << form.get_name() << ", form grade to sign " << form.get_grade_to_signe() << ", grade to execute " << form.get_grade_to_execute() << std::endl;
 	return (os);
 }
+
+std::ostream	&operator << (std::ostream &os, const AForm &form)
+{
+	os << form.get_name() << ", form grade to sign " << form.get_grade_to_signe() << ", grade to execute " << form.get_grade_to_execute() << std::endl;
+	return (os);
+}
+
+char const*	Form::GradeTooHighException::what() const throw() {return ("Form::exception : Grade is too high");}
+
+char const*	Form::GradeTooLowException::what() const throw() {return ("Form::exception : Grade is too low");}
+
