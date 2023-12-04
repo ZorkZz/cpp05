@@ -77,7 +77,7 @@ std::ostream	&operator << (std::ostream &os, const Form &form)
 	return (os);
 }
 
-std::ostream	&operator << (std::ostream &os, const AForm &form)
+std::ostream	&operator << (std::ostream &os, const Form &form)
 {
 	os << form.get_name() << ", form grade to sign " << form.get_grade_to_signe() << ", grade to execute " << form.get_grade_to_execute() << std::endl;
 	return (os);
