@@ -196,8 +196,8 @@ void	presidential(void)
 
 int	main()
 {
-	robotomy();
-	tree();
-	presidential();
+	// robotomy();
+	// tree();
+	// presidential();
 	return (0);
 }
