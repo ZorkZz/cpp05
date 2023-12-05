@@ -4,6 +4,9 @@
 #include <iostream>
 #include <string>
 #include <cstring>
+#include "AForm.hpp"
+
+class AForm;
 
 class Bureaucrat
 {
@@ -18,6 +21,8 @@ class Bureaucrat
 		Bureaucrat &operator++();
 		Bureaucrat &operator--();
 		std::string	get_name() const;
+		void	executeForm(const AForm &form);
+		void	signeForm(AForm &form);
 		int	get_grade() const;
 		class GradeTooHighException : public std::exception
 		{
@@ -29,7 +34,16 @@ class Bureaucrat
 			public:
 				virtual const char *what() const throw();
 		};
-
+		class AlreadySigned : public std::exception
+		{
+			public:
+				virtual const char *what() const throw();
+		};
+		class NotSigned : public std::exception
+		{
+			public:
+				virtual const char *what() const throw();
+		};
 	private:
 		const   std::string _name;
 		int _grade;

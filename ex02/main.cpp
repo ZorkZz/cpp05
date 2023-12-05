@@ -6,94 +6,110 @@
 
 void	robotomy(void)
 {
+	AForm *form;
 	try
 	{
 		Bureaucrat fry("fry", 40);
-		RobotomyRequestForm form;
+		form = new RobotomyRequestForm("Bender");
 
-		form.signeForm(fry);
-		form.executeForm(fry);
+		form->signeForm(fry);
+		form->executeForm(fry);
+		delete(form);
 	}
 	catch(const std::exception& e)
 	{
+		delete(form);
 		std::cerr << e.what() << std::endl;
 	}
 	try
 	{
 		Bureaucrat fry("fry", 45);
-		RobotomyRequestForm form("bender");
+		form = new RobotomyRequestForm("Bender");
 
-		form.signeForm(fry);
-		form.executeForm(fry);
+		form->signeForm(fry);
+		form->executeForm(fry);
+		delete(form);
 	}
 	catch(const std::exception& e)
 	{
+		delete(form);
 		std::cerr << e.what() << std::endl;
 	}
 	try
 	{
 		Bureaucrat fry("fry", 73);
-		RobotomyRequestForm form("bender");
+		form = new RobotomyRequestForm("Bender");
 
-		form.signeForm(fry);
-		form.executeForm(fry);
+		form->signeForm(fry);
+		form->executeForm(fry);
+		delete(form);
 	}
 	catch(const std::exception& e)
 	{
+		delete(form);
 		std::cerr << e.what() << std::endl;
 	}
 	try
 	{
 		Bureaucrat	fry0("fry0", 72);
 		Bureaucrat fry("fry", 45);
-		RobotomyRequestForm form("bender");
+		form = new RobotomyRequestForm("Bender");
 
-		form.signeForm(fry0);
-		form.executeForm(fry);
+		form->signeForm(fry0);
+		form->executeForm(fry);
+		delete(form);
 	}
 	catch(const std::exception& e)
 	{
+		delete(form);
 		std::cerr << e.what() << std::endl;
 	}
 }
 
 void	tree()
 {
+	AForm *form;
 	try
 	{
 		Bureaucrat fry("fry", 1);
-		ShrubberyCreationForm form("idk");
+		form = new ShrubberyCreationForm("idk");
 
-		form.signeForm(fry);
-		form.executeForm(fry);
+		form->signeForm(fry);
+		form->executeForm(fry);
+		delete(form);
 	}
 	catch(const std::exception& e)
 	{
+		delete(form);
 		std::cerr << e.what() << std::endl;
 	}
 	try
 	{
 		Bureaucrat fry("fry", 137);
-		ShrubberyCreationForm form("idk");
+		form = new ShrubberyCreationForm("idk");
 
-		form.signeForm(fry);
-		form.executeForm(fry);
+		form->signeForm(fry);
+		form->executeForm(fry);
+		delete(form);
 	}
 	catch(const std::exception& e)
 	{
+		delete(form);
 		std::cerr << e.what() << std::endl;
 	}
 
 	try
 	{
 		Bureaucrat fry("fry", 145);
-		ShrubberyCreationForm form("idk");
+		form = new ShrubberyCreationForm("idk");
 
-		form.signeForm(fry);
-		form.executeForm(fry);
+		form->signeForm(fry);
+		form->executeForm(fry);
+		delete(form);
 	}
 	catch(const std::exception& e)
 	{
+		delete(form);
 		std::cerr << e.what() << std::endl;
 	}
 
@@ -101,54 +117,63 @@ void	tree()
 	{
 		Bureaucrat fry("fry", 145);
 		Bureaucrat fry0("fry0", 137);
-		ShrubberyCreationForm form("idk");
+		form = new ShrubberyCreationForm("idk");
 
-		form.signeForm(fry);
-		form.executeForm(fry0);
+		form->signeForm(fry);
+		form->executeForm(fry0);
+		delete(form);
 	}
 	catch(const std::exception& e)
 	{
+		delete(form);
 		std::cerr << e.what() << std::endl;
 	}
 }
 
 void	presidential(void)
 {
+	AForm *form;
 	try
 	{
 		Bureaucrat fry("fry", 1);
-		PresidentialPardonForm form("idk");
+		form = new PresidentialPardonForm("idk");
 
-		form.signeForm(fry);
-		form.executeForm(fry);
+		form->signeForm(fry);
+		form->executeForm(fry);
+		delete(form);
 	}
 	catch(const std::exception& e)
 	{
+		delete(form);
 		std::cerr << e.what() << std::endl;
 	}
 	try
 	{
 		Bureaucrat fry("fry", 5);
-		PresidentialPardonForm form("idk");
+		form = new PresidentialPardonForm("idk");
 
-		form.signeForm(fry);
-		form.executeForm(fry);
+		form->signeForm(fry);
+		form->executeForm(fry);
+		delete(form);
 	}
 	catch(const std::exception& e)
 	{
+		delete(form);
 		std::cerr << e.what() << std::endl;
 	}
 
 	try
 	{
 		Bureaucrat fry("fry", 25);
-		PresidentialPardonForm form("idk");
+		form = new PresidentialPardonForm("idk");
 
-		form.signeForm(fry);
-		form.executeForm(fry);
+		form->signeForm(fry);
+		form->executeForm(fry);
+		delete(form);
 	}
 	catch(const std::exception& e)
 	{
+		delete(form);
 		std::cerr << e.what() << std::endl;
 	}
 
@@ -156,21 +181,23 @@ void	presidential(void)
 	{
 		Bureaucrat fry("fry", 25);
 		Bureaucrat fry0("fry0", 5);
-		PresidentialPardonForm form("idk");
+		form = new PresidentialPardonForm("idk");
 
-		form.signeForm(fry);
-		form.executeForm(fry0);
+		form->signeForm(fry);
+		form->executeForm(fry0);
+		delete(form);
 	}
 	catch(const std::exception& e)
 	{
+		delete(form);
 		std::cerr << e.what() << std::endl;
 	}
 }
 
 int	main()
 {
-	robotomy();
-	tree();
-	presidential();
+	// robotomy();
+	// tree();
+	// presidential();
 	return (0);
 }

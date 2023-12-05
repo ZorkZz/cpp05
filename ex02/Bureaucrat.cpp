@@ -68,6 +68,32 @@ int Bureaucrat::get_grade() const
 	return (this->_grade);
 }
 
+void	Bureaucrat::signeForm(AForm &form)
+{
+	if (form.is_signed())
+	{
+		if (this->_grade > form.get_grade_to_signe())
+			throw (GradeTooLowException());
+		else
+			form.signeForm(*this);
+	}
+	else
+		throw (AlreadySigned());
+}
+
+void	Bureaucrat::executeForm(const AForm &form)
+{
+	if (form.is_signed())
+	{
+		if (this->_grade > form.get_grade_to_execute())
+			throw (GradeTooLowException());
+		else
+			form.executeForm(*this);
+	}
+	else
+		throw (NotSigned());
+}
+
 std::ostream	&operator << (std::ostream &os, const Bureaucrat &bureaucrat)
 {
 	os << bureaucrat.get_name() << ", bureacrat grade " << bureaucrat.get_grade() << std::endl;
@@ -77,3 +103,9 @@ std::ostream	&operator << (std::ostream &os, const Bureaucrat &bureaucrat)
 char const*	Bureaucrat::GradeTooHighException::what() const throw() {return ("Bureaucrat::exception : Grade is too high");}
 
 char const*	Bureaucrat::GradeTooLowException::what() const throw() {return ("Bureaucrat::exception : Grade is too low");}
+
+char const*	Bureaucrat::AlreadySigned::what() const throw() {return ("Bureaucrat::exception : Form already signed");}
+
+char const*	Bureaucrat::NotSigned::what() const throw() {return ("Bureaucrat::exception : Form not signed");}
+
+

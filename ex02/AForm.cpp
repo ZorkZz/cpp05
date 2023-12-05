@@ -31,7 +31,7 @@ AForm &AForm::operator=(const AForm &form)
 	return (*this);
 }
 
-void AForm::executeForm(Bureaucrat &bureaucrat)
+void AForm::executeForm(Bureaucrat const &bureaucrat) const
 {
 	if (bureaucrat.get_grade() > this->_grade_to_exeute)
 		throw (GradeTooLowException());
@@ -51,9 +51,13 @@ void	AForm::signeForm(Bureaucrat &bureaucrat)
 		std::cout << bureaucrat.get_name() << " signed " << this->_name << std::endl;
 	}
 	else
-		std::cout << bureaucrat.get_name() << " couldn't sign " << this->_name << "because it is already signed";
+		throw(AlreadySigned());
 }
 
+bool	AForm::is_signed() const
+{
+	return (this->_is_signed);
+}
 
 std::string AForm::get_name() const
 {
@@ -80,3 +84,5 @@ std::ostream	&operator << (std::ostream &os, const AForm &form)
 char const*	AForm::GradeTooHighException::what() const throw() {return ("Form::exception : Grade is too high");}
 
 char const*	AForm::GradeTooLowException::what() const throw() {return ("Form::exception : Grade is too low");}
+
+char const*	AForm::AlreadySigned::what() const throw() {return ("Form::exception : Form already signed");}

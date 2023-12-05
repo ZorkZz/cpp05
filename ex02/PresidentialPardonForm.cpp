@@ -27,20 +27,7 @@ PresidentialPardonForm &PresidentialPardonForm::operator=(const PresidentialPard
 	return (*this);
 }
 
-void PresidentialPardonForm::signeForm(Bureaucrat const &bureaucrat)
-{
-	if (bureaucrat.get_grade() > this->_grade_to_signe)
-		throw(GradeTooLowException());
-	else if (this->_is_signed == 0)
-	{
-		this->_is_signed = 1;
-		std::cout << bureaucrat.get_name() << " signed " << this->_name << std::endl;
-	}
-	else
-		std::cout << bureaucrat.get_name() << " couldn't sign " << this->_name << "because it is already signed";
-}
-
-void	PresidentialPardonForm::executeForm(Bureaucrat const &bureaucrat)
+void	PresidentialPardonForm::executeForm(Bureaucrat const &bureaucrat) const
 {
 	if (bureaucrat.get_grade() > this->_grade_to_exeute)
 		throw(GradeTooLowException());

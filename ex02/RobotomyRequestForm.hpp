@@ -8,17 +8,15 @@
 class RobotomyRequestForm: public AForm
 {
 	public:
-		RobotomyRequestForm();
 		RobotomyRequestForm(std::string const target);
-		~RobotomyRequestForm();
+		virtual ~RobotomyRequestForm();
 		RobotomyRequestForm(const RobotomyRequestForm &form);
 		RobotomyRequestForm &operator=(const RobotomyRequestForm &Form);
-		virtual void	signeForm(Bureaucrat const &bureaucrat);
-		virtual void	executeForm(Bureaucrat const &bureaucrat);
+		void	executeForm(Bureaucrat const &bureaucrat) const;
 	
 	private:
+		RobotomyRequestForm();
 		std::string	_target;
-
 };
 
 #endif

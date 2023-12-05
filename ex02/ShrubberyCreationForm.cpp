@@ -27,20 +27,7 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationF
 	return (*this);
 }
 
-void ShrubberyCreationForm::signeForm(Bureaucrat const &bureaucrat)
-{
-	if (bureaucrat.get_grade() > this->_grade_to_signe)
-		throw(GradeTooLowException());
-	else if (this->_is_signed == 0)
-	{
-		this->_is_signed = 1;
-		std::cout << bureaucrat.get_name() << " signed " << this->_name << std::endl;
-	}
-	else
-		std::cout << bureaucrat.get_name() << " couldn't sign " << this->_name << "because it is already signed";
-}
-
-void	ShrubberyCreationForm::executeForm(Bureaucrat const &bureaucrat)
+void	ShrubberyCreationForm::executeForm(Bureaucrat const &bureaucrat) const
 {
 	std::string	file_name;
 	if (bureaucrat.get_grade() > this->_grade_to_exeute)
