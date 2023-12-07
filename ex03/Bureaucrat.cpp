@@ -70,7 +70,7 @@ int Bureaucrat::get_grade() const
 
 void	Bureaucrat::signeForm(AForm &form)
 {
-	if (form.is_signed())
+	if (!form.is_signed())
 	{
 		if (this->_grade > form.get_grade_to_signe())
 			throw (GradeTooLowException());

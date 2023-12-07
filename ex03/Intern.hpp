@@ -3,8 +3,14 @@
 
 #include <iostream>
 #include "AForm.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
 
 class AForm;
+class ShrubberyCreationForm;
+class PresidentialPardonForm;
+class RobotomyRequestForm;
 
 class Intern
 {

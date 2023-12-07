@@ -23,6 +23,13 @@ AForm *Intern::createForm(std::string name_of_form, std::string target_of_form)
 	}
 	if (form_name == "NULL")
 		throw(FormDontExist());
-	else if
+	else if(form_name == "ShrubberyCreationForm")
+		form = new ShrubberyCreationForm(target_of_form);
+	else if (form_name == "PresidentialPardonForm")
+		form = new PresidentialPardonForm(target_of_form);
+	else if (form_name == "RobotomyRequestForm")
+		form = new RobotomyRequestForm(target_of_form);
 	return (form);
 }
+
+char const*	Intern::FormDontExist::what() const throw() {return ("Intern::exception : Form don't exist");}

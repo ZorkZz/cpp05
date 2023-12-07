@@ -1,8 +1,8 @@
-NAME = ex02
+NAME = ex03
 
-SRC = AForm.cpp Bureaucrat.cpp main.cpp RobotomyRequestForm.cpp ShrubberyCreationForm.cpp PresidentialPardonForm.cpp
+SRC = AForm.cpp Bureaucrat.cpp main.cpp RobotomyRequestForm.cpp ShrubberyCreationForm.cpp PresidentialPardonForm.cpp Intern.cpp
 
-HEADER = Bureaucrat.hpp AForm.cpp AForm.hpp RobotomyRequestForm.hpp ShrubberyCreationForm.hpp PresidentialPardonForm.hpp
+HEADER = Bureaucrat.hpp AForm.cpp AForm.hpp RobotomyRequestForm.hpp ShrubberyCreationForm.hpp PresidentialPardonForm.hpp Intern.hpp
 
 OBJ = $(SRC:%.cpp=%.zizi)
 
