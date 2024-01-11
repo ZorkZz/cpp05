@@ -41,7 +41,7 @@ void Form::execute(Bureaucrat &bureaucrat)
 		std::cout << bureaucrat.get_name() << " couldn't execute the form " << this->_name << "he is not signed" << std::endl;
 }
 
-void	Form::signe(Bureaucrat &bureaucrat)
+void	Form::beSigned(Bureaucrat &bureaucrat)
 {
 	if (bureaucrat.get_grade() > this->_grade_to_signe)
 		throw (GradeTooLowException());
@@ -69,12 +69,6 @@ int Form::get_grade_to_execute() const
 int Form::get_grade_to_signe() const
 {
 	return (this->_grade_to_signe);
-}
-
-std::ostream	&operator << (std::ostream &os, const Form &form)
-{
-	os << form.get_name() << ", form grade to sign " << form.get_grade_to_signe() << ", grade to execute " << form.get_grade_to_execute() << std::endl;
-	return (os);
 }
 
 std::ostream	&operator << (std::ostream &os, const Form &form)

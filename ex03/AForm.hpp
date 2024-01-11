@@ -17,7 +17,7 @@ class AForm
 		std::string get_name() const;
 		int	get_grade_to_signe() const;
 		int	get_grade_to_execute() const;
-		void	signeForm(Bureaucrat &bureaucrat);
+		void	beSigned(Bureaucrat &bureaucrat);
 		virtual void	executeForm(Bureaucrat const &bureaucrat) const = 0;
 		bool	is_signed() const;
 		class GradeTooHighException : public std::exception

@@ -15,7 +15,7 @@ class Form
 		std::string get_name() const;
 		int	get_grade_to_signe() const;
 		int	get_grade_to_execute() const;
-		void	signe(Bureaucrat &bureaucrat);
+		void	beSigned(Bureaucrat &bureaucrat);
 		void	execute(Bureaucrat &bureaucrat);
 		class GradeTooHighException : public std::exception
 		{

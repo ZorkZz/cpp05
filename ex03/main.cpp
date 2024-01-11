@@ -22,6 +22,18 @@ int	main()
 	{
 		std::cerr << e.what() << '\n';
 	}
+
+	try
+	{
+		form = DontCare.createForm("AAAAAAAA", "Bender");
+		fry.signeForm(*form);
+		fry.executeForm(*form);
+		delete(form);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
 	
 	return (0);
 }

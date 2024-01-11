@@ -41,7 +41,7 @@ void AForm::executeForm(Bureaucrat const &bureaucrat) const
 		std::cout << bureaucrat.get_name() << " couldn't execute the form " << this->_name << "he is not signed" << std::endl;
 }
 
-void	AForm::signeForm(Bureaucrat &bureaucrat)
+void	AForm::beSigned(Bureaucrat &bureaucrat)
 {
 	if (bureaucrat.get_grade() > this->_grade_to_signe)
 		throw (GradeTooLowException());

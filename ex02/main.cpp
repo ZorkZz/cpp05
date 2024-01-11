@@ -12,7 +12,7 @@ void	robotomy(void)
 		Bureaucrat fry("fry", 40);
 		form = new RobotomyRequestForm("Bender");
 
-		form->signeForm(fry);
+		form->beSigned(fry);
 		form->executeForm(fry);
 		delete(form);
 	}
@@ -26,7 +26,7 @@ void	robotomy(void)
 		Bureaucrat fry("fry", 45);
 		form = new RobotomyRequestForm("Bender");
 
-		form->signeForm(fry);
+		form->beSigned(fry);
 		form->executeForm(fry);
 		delete(form);
 	}
@@ -40,7 +40,7 @@ void	robotomy(void)
 		Bureaucrat fry("fry", 73);
 		form = new RobotomyRequestForm("Bender");
 
-		form->signeForm(fry);
+		form->beSigned(fry);
 		form->executeForm(fry);
 		delete(form);
 	}
@@ -55,7 +55,7 @@ void	robotomy(void)
 		Bureaucrat fry("fry", 45);
 		form = new RobotomyRequestForm("Bender");
 
-		form->signeForm(fry0);
+		form->beSigned(fry0);
 		form->executeForm(fry);
 		delete(form);
 	}
@@ -74,7 +74,7 @@ void	tree()
 		Bureaucrat fry("fry", 1);
 		form = new ShrubberyCreationForm("idk");
 
-		form->signeForm(fry);
+		form->beSigned(fry);
 		form->executeForm(fry);
 		delete(form);
 	}
@@ -88,7 +88,7 @@ void	tree()
 		Bureaucrat fry("fry", 137);
 		form = new ShrubberyCreationForm("idk");
 
-		form->signeForm(fry);
+		form->beSigned(fry);
 		form->executeForm(fry);
 		delete(form);
 	}
@@ -103,7 +103,7 @@ void	tree()
 		Bureaucrat fry("fry", 145);
 		form = new ShrubberyCreationForm("idk");
 
-		form->signeForm(fry);
+		form->beSigned(fry);
 		form->executeForm(fry);
 		delete(form);
 	}
@@ -119,7 +119,7 @@ void	tree()
 		Bureaucrat fry0("fry0", 137);
 		form = new ShrubberyCreationForm("idk");
 
-		form->signeForm(fry);
+		form->beSigned(fry);
 		form->executeForm(fry0);
 		delete(form);
 	}
@@ -138,7 +138,7 @@ void	presidential(void)
 		Bureaucrat fry("fry", 1);
 		form = new PresidentialPardonForm("idk");
 
-		form->signeForm(fry);
+		form->beSigned(fry);
 		form->executeForm(fry);
 		delete(form);
 	}
@@ -152,7 +152,7 @@ void	presidential(void)
 		Bureaucrat fry("fry", 5);
 		form = new PresidentialPardonForm("idk");
 
-		form->signeForm(fry);
+		form->beSigned(fry);
 		form->executeForm(fry);
 		delete(form);
 	}
@@ -167,7 +167,7 @@ void	presidential(void)
 		Bureaucrat fry("fry", 25);
 		form = new PresidentialPardonForm("idk");
 
-		form->signeForm(fry);
+		form->beSigned(fry);
 		form->executeForm(fry);
 		delete(form);
 	}
@@ -183,7 +183,7 @@ void	presidential(void)
 		Bureaucrat fry0("fry0", 5);
 		form = new PresidentialPardonForm("idk");
 
-		form->signeForm(fry);
+		form->beSigned(fry);
 		form->executeForm(fry0);
 		delete(form);
 	}

@@ -75,7 +75,7 @@ void	Bureaucrat::signeForm(AForm &form)
 		if (this->_grade > form.get_grade_to_signe())
 			throw (GradeTooLowException());
 		else
-			form.signeForm(*this);
+			form.beSigned(*this);
 	}
 	else
 		throw (AlreadySigned());

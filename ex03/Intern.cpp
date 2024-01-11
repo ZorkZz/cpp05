@@ -13,13 +13,16 @@ Intern::~Intern()
 
 AForm *Intern::createForm(std::string name_of_form, std::string target_of_form)
 {
-	AForm *form;
+	AForm *form = NULL;
 	std::string form_name = "NULL";
 
-	for (size_t i = 0; i < _forms->size(); i++)
+	for (size_t i = 0; i < 3; i++)
 	{
 		if (name_of_form == _forms[i])
+		{
 			form_name = name_of_form;
+			std::cout << "Intern create " << name_of_form << std::endl;
+		}
 	}
 	if (form_name == "NULL")
 		throw(FormDontExist());
