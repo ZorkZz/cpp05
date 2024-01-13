@@ -11,7 +11,7 @@ Intern::~Intern()
 {
 }
 
-AForm *Intern::createForm(std::string name_of_form, std::string target_of_form)
+AForm *Intern::makeForm(std::string name_of_form, std::string target_of_form)
 {
 	AForm *form = NULL;
 	std::string form_name = "NULL";

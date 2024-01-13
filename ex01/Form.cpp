@@ -38,7 +38,7 @@ void Form::execute(Bureaucrat &bureaucrat)
 	if (this->_is_signed)
 		std::cout << bureaucrat.get_name() << " execute the form " << this->_name << std::endl;
 	else
-		std::cout << bureaucrat.get_name() << " couldn't execute the form " << this->_name << "he is not signed" << std::endl;
+		throw (NotSigned());
 }
 
 void	Form::beSigned(Bureaucrat &bureaucrat)
@@ -51,9 +51,13 @@ void	Form::beSigned(Bureaucrat &bureaucrat)
 		std::cout << bureaucrat.get_name() << " signed " << this->_name << std::endl;
 	}
 	else
-		std::cout << bureaucrat.get_name() << " couldn't sign " << this->_name << "because it is already signed";
+		throw (AlreadySigned());
 }
 
+bool	Form::is_signed() const
+{
+	return (this->_is_signed);
+}
 
 std::string Form::get_name() const
 {
@@ -81,3 +85,6 @@ char const*	Form::GradeTooHighException::what() const throw() {return ("Form::ex
 
 char const*	Form::GradeTooLowException::what() const throw() {return ("Form::exception : Grade is too low");}
 
+char const*	Form::AlreadySigned::what() const throw() {return ("Form::exception : Form already signed");}
+
+char const*	Form::NotSigned::what() const throw() {return ("Form::exception : Form not signed");}

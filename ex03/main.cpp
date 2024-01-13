@@ -13,7 +13,7 @@ int	main()
 
 	try
 	{
-		form = DontCare.createForm("RobotomyRequestForm", "Bender");
+		form = DontCare.makeForm("RobotomyRequestForm", "Bender");
 		fry.signeForm(*form);
 		fry.executeForm(*form);
 		delete(form);
@@ -25,7 +25,7 @@ int	main()
 
 	try
 	{
-		form = DontCare.createForm("AAAAAAAA", "Bender");
+		form = DontCare.makeForm("AAAAAAAA", "Bender");
 		fry.signeForm(*form);
 		fry.executeForm(*form);
 		delete(form);

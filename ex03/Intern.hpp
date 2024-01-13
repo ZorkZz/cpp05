@@ -17,7 +17,7 @@ class Intern
 	public:
 		~Intern();
 		Intern();
-		AForm *createForm(std::string name_of_form, std::string target_of_form);
+		AForm *makeForm(std::string name_of_form, std::string target_of_form);
 		class FormDontExist : public std::exception
 		{
 			public:

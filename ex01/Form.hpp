@@ -1,8 +1,10 @@
 #ifndef FORM_H
 #define FORM_H
 
-
+#include <ostream>
 #include "Bureaucrat.hpp"
+
+class	Bureaucrat;
 
 class Form
 {
@@ -17,12 +19,23 @@ class Form
 		int	get_grade_to_execute() const;
 		void	beSigned(Bureaucrat &bureaucrat);
 		void	execute(Bureaucrat &bureaucrat);
+		bool	is_signed() const;
 		class GradeTooHighException : public std::exception
 		{
 			public:
 				virtual const char *what() const throw();
 		};
 		class GradeTooLowException : public std::exception
+		{
+			public:
+				virtual const char *what() const throw();
+		};
+		class AlreadySigned : public std::exception
+		{
+			public:
+				virtual const char *what() const throw();
+		};
+		class NotSigned : public std::exception
 		{
 			public:
 				virtual const char *what() const throw();

@@ -68,7 +68,7 @@ int Bureaucrat::get_grade() const
 	return (this->_grade);
 }
 
-void	Bureaucrat::signeForm(AForm &form)
+void	Bureaucrat::signForm(AForm &form)
 {
 	if (!form.is_signed())
 	{

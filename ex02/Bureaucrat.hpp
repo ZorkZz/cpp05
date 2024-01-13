@@ -22,7 +22,7 @@ class Bureaucrat
 		Bureaucrat &operator--();
 		std::string	get_name() const;
 		void	executeForm(const AForm &form);
-		void	signeForm(AForm &form);
+		void	signForm(AForm &form);
 		int	get_grade() const;
 		class GradeTooHighException : public std::exception
 		{
