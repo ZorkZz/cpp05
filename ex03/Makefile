@@ -32,7 +32,7 @@ clean:
 
 fclean: clean
 	@$(RM) $(NAME)
-	@printf "\033[1;31m \r\033[2KDeleting executable : DONE \033[0m\n\n"
+	@printf "\033[1;31m \r\033[2KDeleting executable : DONE \033[0m\n"
 
 re: fclean all
 

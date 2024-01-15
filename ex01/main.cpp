@@ -99,10 +99,26 @@ void	perfect(void)
 	}
 }
 
+void	not_signed(void)
+{
+	try
+	{
+		Bureaucrat	bureau(3);
+		Form		form("form", 10, 3);
+
+		bureau.executeForm(form);
+	}
+	catch(std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+}
+
 int	main(void)
 {
 	to_high();
 	to_low();
 	perfect();
+	not_signed();
 	return (0);
 }
